@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+
+<?php
+
+// Raycast Script Command Template
+//
+// Duplicate this file and remove ".template." from the filename to get started.
+// See full documentation here: https://github.com/raycast/script-commands
+//
+// Required parameters:
+// @raycast.schemaVersion 1
+// @raycast.title Plurallizer
+// @raycast.mode fullOutput
+//
+// Optional parameters:
+// @raycast.icon ♾
+// @raycast.currentDirectoryPath ~
+// @raycast.packageName wotta/raycast-scripts
+// @raycast.argument1 { "type": "text", "placeholder": "Word" }
+
+require_once  __DIR__ . '/vendor/autoload.php';
+
+use Alfred\Workflows\Workflow;
+use Symfony\Component\String\Inflector\EnglishInflector;
+
+$inflector = new EnglishInflector;
+
+/** @var \Alfred\Workflows\Result $result */
+foreach ($inflector->pluralize($argv[1]) as $result) {
+    echo $result . "\n";
+}
+
+exit(0);

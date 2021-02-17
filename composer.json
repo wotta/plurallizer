@@ -1,0 +1,16 @@
+{
+    "name": "wotta/alfred-plurallizer",
+    "description": "A simple alfred workflow that will try to plurallize the given text",
+    "type": "library",
+    "require": {
+        "symfony/inflector": "^5.2",
+        "joetannenbaum/alfred-workflow": "^0.1.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wouter van Marrum",
+            "email": "wouter.van.marrum@protonmail.com"
+        }
+    ]
+}
